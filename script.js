@@ -30,19 +30,20 @@ const displayCardDetails = (details) => {
 
   const detialsCard = document.getElementById("card-details");
   detialsCard.innerHTML = ``;
+  console.log(details);
 
   for (let detail of details.data) {
     const creatDetails = document.createElement("div");
-    creatDetails.innerHTML = ` <div class="card bg-white rounded-md py-5 p-[10px]">
-            <h1 class="text-xl font-bold">Eager</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <h1 class="text-xl font-bold">${detail.pronunciation}</h1>
-            <div class="card-btn flex justify-around">
-              <button>
-                <i class="fa-solid fa-circle-info"></i>
+    creatDetails.innerHTML = ` <div class="card bg-white rounded-md py-[60px] p-[10px]">
+              <h1 class="text-xl font-bold">${detail.word}</h1>
+            <p>Meaning/Pronounciation</p>
+            <h1 class="text-xl font-bold">${detail.meaning}/${detail.pronunciation}</h1>
+            <div class="card-btn flex justify-around mt-[30px]">
+              <button class=" bg-blue-300 rounded-full p-[10px]">
+                <i class="fa-solid fa-circle-info text-white"></i>
               </button>
-              <button>
-                <i class="fa-solid fa-volume"></i>
+              <button class=" bg-blue-300 rounded-full p-[10px]">
+                <i class="fa-solid fa-volume-high text-white"></i>
               </button>
             </div>
           </div>`;
