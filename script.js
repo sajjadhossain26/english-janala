@@ -17,7 +17,7 @@ const displayLesson = (lessons) => {
     const creatDiv = document.createElement("div");
 
     creatDiv.innerHTML = `
-     <button onclick="displayCard(${lesson.level_no})" class="btn btn-primary btn-outline sm:text-sm"
+     <button id="lesson-btn-${lesson.level_no}" onclick="displayCard(${lesson.level_no})" class="btn btn-primary btn-outline sm:text-sm"
             ><i class="fa-solid fa-book-open"></i> ${lesson.lessonName} -${lesson.level_no}</
     button>
     `;
@@ -26,18 +26,35 @@ const displayLesson = (lessons) => {
 };
 
 const displayCardDetails = (details) => {
-  console.log(details);
-
+  console.log(details.data);
+  const checkCard = document.getElementById("next-lesson");
   const detialsCard = document.getElementById("card-details");
   detialsCard.innerHTML = ``;
   console.log(details);
+  if (details.data.length == 0) {
+    detialsCard.innerHTML = `
+      <div
+            id="next-lesson"
+            class="next-leasson col-span-full text-center m-auto"
+          >
+            <img
+              class="w-[80px] m-auto"
+              src="./assets/alert-error.png"
+              alt=""
+            />
+            <p class="">Ei Lessson e kono vocabulary jokto hoi nai!</p>
+            <h1 class="text-[40px] font-bold">Next Lesson e jan</h1>
+          </div>
+    `;
+  }
 
   for (let detail of details.data) {
+    const info = detail.meaning ? `${detail.meaning}` : "No Word";
     const creatDetails = document.createElement("div");
     creatDetails.innerHTML = ` <div class="card bg-white rounded-md py-[60px] p-[10px]">
               <h1 class="text-xl font-bold">${detail.word}</h1>
             <p>Meaning/Pronounciation</p>
-            <h1 class="text-xl font-bold">${detail.meaning}/${detail.pronunciation}</h1>
+            <h1 class="text-xl font-bold">${info}/${detail.pronunciation}</h1>
             <div class="card-btn flex justify-around mt-[30px]">
               <button class=" bg-blue-300 rounded-full p-[10px]">
                 <i class="fa-solid fa-circle-info text-white"></i>
