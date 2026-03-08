@@ -4,20 +4,8 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-<<<<<<< HEAD
 
 .active {
   background-color: #422ad5 !important;
   color: white !important;
 }
-
-.active {
-  background-color: #422ad5 !important;
-  color: white !important;
-}
-=======
-.active{
-  background-color: #422ad5!important;
-  color: white!important;
-}
->>>>>>> 03b6afef6a46a843d65cb8906c84771e8a37a4da
