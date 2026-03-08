@@ -8,20 +8,6 @@ const displayCard = (id) => {
   fetch(`https://openapi.programming-hero.com/api/level/${id}`)
     .then((res) => res.json())
     .then((json) => {
-<<<<<<< HEAD
-      const btn = document.getElementById(`lesson-btn-${id}`);
-      remoteActive();
-      btn.classList.add("active");
-      displayCardDetails(json);
-    });
-};
-
-const remoteActive = () => {
-  const btn = document.querySelectorAll(".actbtn");
-  btn.forEach((btn) => btn.classList.remove("active"));
-};
-
-=======
       const clickBtn = document.getElementById(`lesson-btn-${id}`);
       remvoeActivebtn();
       clickBtn.classList.add("active");
@@ -34,7 +20,6 @@ const remvoeActivebtn = () => {
   console.log(btn);
   btn.forEach((btn) => btn.classList.remove("active"));
 };
->>>>>>> 03b6afef6a46a843d65cb8906c84771e8a37a4da
 const displayLesson = (lessons) => {
   const button = document.getElementById("learn-container");
   button.innerHTML = ``;
@@ -42,11 +27,7 @@ const displayLesson = (lessons) => {
     const creatDiv = document.createElement("div");
 
     creatDiv.innerHTML = `
-<<<<<<< HEAD
-     <button id="lesson-btn-${lesson.level_no}" onclick="displayCard(${lesson.level_no})" class="btn btn-primary btn-outline sm:text-sm actbtn"
-=======
      <button id="lesson-btn-${lesson.level_no}" onclick="displayCard(${lesson.level_no})" class="btn btn-primary btn-outline sm:text-sm actremove"
->>>>>>> 03b6afef6a46a843d65cb8906c84771e8a37a4da
             ><i class="fa-solid fa-book-open"></i> ${lesson.lessonName} -${lesson.level_no}</
     button>
     `;
@@ -85,11 +66,7 @@ const displayCardDetails = (details) => {
             <p>Meaning/Pronounciation</p>
             <h1 class="text-xl font-bold">${info}/${detail.pronunciation}</h1>
             <div class="card-btn flex justify-around mt-[30px]">
-<<<<<<< HEAD
-              <button class=" bg-blue-300 rounded-full p-[10px]">
-=======
               <button onclick="my_modal_2.showModal()" class=" bg-blue-300 rounded-full p-[10px] cursor-pointer">
->>>>>>> 03b6afef6a46a843d65cb8906c84771e8a37a4da
                 <i class="fa-solid fa-circle-info text-white"></i>
               </button>
               <button class=" bg-blue-300 rounded-full p-[10px]">
